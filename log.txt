@@ -1,0 +1,293 @@
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ ls
+python.py
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git branch mytest
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git branch'
+> ^C
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git branch
+* master
+  mytest
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git branch -a
+* master
+  mytest
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ ls
+python.py
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git checkout mytest
+Switched to branch 'mytest'
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (mytest)
+$ gvi python.py
+bash: gvi: command not found
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (mytest)
+$ vi python.py
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (mytest)
+$ git add .
+gi
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (mytest)
+$ git commit -m " Sample"
+[mytest 553ef7e]  Sample
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (mytest)
+$ git push -u origin mytest
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'mytest' on GitHub by visiting:
+remote:      https://github.com/MonitKapoor/Program1/pull/new/mytest
+remote:
+To https://github.com/MonitKapoor/Program1
+ * [new branch]      mytest -> mytest
+branch 'mytest' set up to track 'origin/mytest'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (mytest)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git branch newtest
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git checkout newtest
+Switched to branch 'newtest'
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ vi python.py
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git set --upstream
+git: 'set' is not a git command. See 'git --help'.
+
+The most similar command is
+        reset
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git checkout -b newtest origin/test
+fatal: a branch named 'newtest' already exists
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git checkout master
+M       python.py
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git checkout -b newtest1 origin/test
+error: Your local changes to the following files would be overwritten by checkout:
+        python.py
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   python.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git restore python.py
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git checkout -b newtest1 origin/test
+branch 'newtest1' set up to track 'origin/test'.
+Switched to a new branch 'newtest1'
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ vi python.py
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git add .
+g
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git commit -m "from tracking branch newtest1"
+[newtest1 ea297c4] from tracking branch newtest1
+ 1 file changed, 3 insertions(+)
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git remote -v
+origin  https://github.com/MonitKapoor/Program1 (fetch)
+origin  https://github.com/MonitKapoor/Program1 (push)
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git push -u origin newtest1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 294 bytes | 294.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'newtest1' on GitHub by visiting:
+remote:      https://github.com/MonitKapoor/Program1/pull/new/newtest1
+remote:
+To https://github.com/MonitKapoor/Program1
+ * [new branch]      newtest1 -> newtest1
+branch 'newtest1' set up to track 'origin/newtest1'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git branch -r
+  origin/HEAD -> origin/master
+  origin/master
+  origin/mytest
+  origin/newtest1
+  origin/test
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git branch -a
+  master
+  mytest
+  newtest
+* newtest1
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/mytest
+  remotes/origin/newtest1
+  remotes/origin/test
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git log --oneline
+ea297c4 (HEAD -> newtest1, origin/newtest1) from tracking branch newtest1
+78a4977 (origin/test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git log --oneline
+2e71f43 (HEAD -> master, origin/master, origin/HEAD, newtest) Merge pull request #3 from Abhicode873/master
+3386541 error corerction
+f247059 Merge pull request #2 from Abhicode873/master
+d098b8f updated file
+7660aef Merge pull request #1 from Abhicode873/master
+f7ac49b updated file
+78a4977 (origin/test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (master)
+$ git checkout test
+branch 'test' set up to track 'origin/test'.
+Switched to a new branch 'test'
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git log --oneline
+78a4977 (HEAD -> test, origin/test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 2 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1005 bytes | 125.00 KiB/s, done.
+From https://github.com/MonitKapoor/Program1
+   ea297c4..e3fb844  newtest1   -> origin/newtest1
+Already up to date.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git log --oneline
+78a4977 (HEAD -> test, origin/test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git checkout newtest
+Switched to branch 'newtest'
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> newtest
+
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git branch --set-upstream-to=origin/test newtest
+branch 'newtest' set up to track 'origin/test'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git pull
+Already up to date.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git pull origin newtest
+fatal: couldn't find remote ref newtest
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git pull origin test
+From https://github.com/MonitKapoor/Program1
+ * branch            test       -> FETCH_HEAD
+Already up to date.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git log --oneline
+2e71f43 (HEAD -> newtest, origin/master, origin/HEAD, master) Merge pull request #3 from Abhicode873/master
+3386541 error corerction
+f247059 Merge pull request #2 from Abhicode873/master
+d098b8f updated file
+7660aef Merge pull request #1 from Abhicode873/master
+f7ac49b updated file
+78a4977 (origin/test, test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (newtest)
+$ git checkout test
+Switched to branch 'test'
+Your branch is up to date with 'origin/test'.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git log --oneline
+78a4977 (HEAD -> test, origin/test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git pull origin test
+From https://github.com/MonitKapoor/Program1
+ * branch            test       -> FETCH_HEAD
+Already up to date.
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ git log --oneline
+78a4977 (HEAD -> test, origin/test) Python file is added
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+$ ^C
+
+Pro VC@AUBLT0034 MINGW64 /d/cloned/Program1 (test)
+
